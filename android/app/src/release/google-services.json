@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "53751732503",
+    "project_id": "gamerboard-ffdde",
+    "storage_bucket": "gamerboard-ffdde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53751732503:android:2dadc0e1926f17ef8cbf52",
+        "android_client_info": {
+          "package_name": "com.gamerboard.live"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53751732503-9otplppg7nl3t6jn8pc4mbcch6ncrb95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrM4g2m9i60WRPZvodaDfhMKf3TBoWC5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53751732503-9otplppg7nl3t6jn8pc4mbcch6ncrb95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

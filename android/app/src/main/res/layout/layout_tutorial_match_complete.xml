@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_dark_2"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/tv_tutorial_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_container_padding_h1"
+        android:fontFamily="@font/gantari"
+        android:gravity="center"
+        android:text="Tutorial match completed!"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_5"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:background="@color/bg_dark_4"
+        android:padding="@dimen/text_container_padding_h1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tutorial_complete">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/gantari"
+            android:gravity="bottom"
+            android:text="Your skill level:"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/text_4"
+            app:layout_constraintBottom_toTopOf="@+id/tv_tutorial_level"
+            app:layout_constraintStart_toEndOf="@+id/iv_rating_icon_tutorial"
+            app:layout_constraintVertical_weight="1"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/iv_rating_icon_tutorial"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/iv_cown_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_tutorial_level"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gantari"
+            android:text="ACE MASTER"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/text_8"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_rating_icon_tutorial"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/iv_rating_icon_tutorial"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_tutorial_complete_content_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintVertical_weight="1"
+            android:fontFamily="@font/gantari"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/text_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tutorial_level"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_tutorial_complete_content_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_container_padding_h1"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/gantari"
+        android:padding="@dimen/text_container_padding_h1"
+        android:text="@string/you_will_be_competing_in_gamerboard"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

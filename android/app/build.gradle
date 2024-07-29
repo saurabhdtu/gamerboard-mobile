@@ -1,0 +1,307 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' } // Gradle Plugin Portal
+    }
+}
+plugins {
+    id("com.apollographql.apollo3").version("3.5.0")
+}
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+
+def VC = 157
+def VN = "5.1.1"
+
+apply plugin: 'com.android.application'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'kotlinx-serialization'
+//apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+
+android {
+    compileSdk 33
+    namespace "com.gamerboard.live"
+    testNamespace "com.gamerboard.livetest"
+    signingConfigs {
+        debug {
+            storeFile file("${rootDir}/app/src/debug/key-debug")
+            storePassword "gamerboard@android"
+            keyAlias "gamerboard-android"
+            keyPassword 'gamerboard@android'
+        }
+        release {
+            storeFile file("${rootDir}/app/src/release/gamerboard-release-keys")
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src/main/assets'
+            }
+        }
+        test {
+            resources.srcDirs += ['src/test/resources']
+        }
+
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    tasks.withType(Test) {
+        testLogging {
+            events "started", "passed", "skipped", "failed"
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.gamerboard.live"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode VC
+        versionName VN
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+        resValue "string", "branch_test_key", "key_test_lp2NaM2iNZFD5PMFo20rOlgluzkM5hAS"
+        resValue "string", "branch_key", "key_live_em0OoG0pN9Cq5RSzfXA4PhpiBraT8gFz"
+        testInstrumentationRunner 'com.gamerboard.live.InstrumentationTestRunner'
+//        ndk {
+//            abiFilters 'arm64-v8a', 'armeabi-v7a'//'x86_64', 'x86'
+//        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            debuggable true
+            minifyEnabled false
+            resValue "bool", "branch_test_mode", "true"
+
+        }
+        release {
+            signingConfig signingConfigs.release
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "bool", "branch_test_mode", "false"
+        }
+        applicationVariants.all {
+            variant ->
+                variant.outputs.each {
+                    output ->
+                        def name = "gamerboard-" + variant.buildType.name + "-" + variant.productFlavors[0].name + "-v" + VC + ".apk"
+                        output.outputFileName = name
+                }
+        }
+
+    }
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        merge 'META-INF/DEPENDENCIES'
+        merge 'com/google/type/**'
+    }
+
+    flavorDimensions 'env'
+    productFlavors {
+        qa {
+            dimension 'env'
+            applicationIdSuffix ".test"
+            buildConfigField "Boolean", 'IS_TEST', "true"
+            buildConfigField "Boolean", 'TEST_VISION', "false"
+            buildConfigField "String", "FLAGSMITH_KEY", "\"H8mXrwj8bDjMByQnyDUQZc\""
+            buildConfigField "String", "API_ENDPOINT", "\"https://api-staging.gamerboard.live/graphql\""
+            buildConfigField "String", "AMPLITUDE_API_KEY", "\"91fe15d8e99d3c7a0f050d7b13a88d8d\""
+            buildConfigField "String", "ONE_SIGNAL_KEY", "\"27ee2e5a-1fe7-4e37-8b98-312c095f79bc\""
+            buildConfigField "String", "SMARTLOOK_KEY", "\"65835dc82c86f917e25a116b6c52486a18cef3a4\""
+            buildConfigField "String", "GS_BUCKET_URL", "\"gs://gamerboard-dev.appspot.com\""
+            buildConfigField "String", "GC_PROJECT_ID", "\"gamerboard-ffdde\""
+            buildConfigField "String", "GC_PUB_SUB_TOPIC", "\"gamerboard_log_v2\""
+            buildConfigField "String", "MAP_API_KEY", "\"AIzaSyBHka40HHCR0-bBdJYIX1zMiZiLuHch5i8\""
+            buildConfigField "String", "SLACK_INCOMING_HOOK", "\"https://hooks.slack.com/services/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\""
+
+            ext {
+                appName = "GB-test"
+            }
+        }
+        staging {
+            dimension 'env'
+            applicationIdSuffix ".stage"
+            buildConfigField "Boolean", 'IS_TEST', "false"
+            buildConfigField "Boolean", 'TEST_VISION', "false"
+            buildConfigField "String", "FLAGSMITH_KEY", "\"H8mXrwj8bDjMByQnyDUQZc\""
+            buildConfigField "String", "API_ENDPOINT", "\"https://api-staging.gamerboard.live/graphql\""
+            buildConfigField "String", "AMPLITUDE_API_KEY", "\"91fe15d8e99d3c7a0f050d7b13a88d8d\""
+            buildConfigField "String", "ONE_SIGNAL_KEY", "\"27ee2e5a-1fe7-4e37-8b98-312c095f79bc\""
+            buildConfigField "String", "SMARTLOOK_KEY", "\"65835dc82c86f917e25a116b6c52486a18cef3a4\""
+            buildConfigField "String", "GS_BUCKET_URL", "\"gs://gamerboard-dev.appspot.com\""
+            buildConfigField "String", "GC_PROJECT_ID", "\"gamerboard-ffdde\""
+            buildConfigField "String", "GC_PUB_SUB_TOPIC", "\"gamerboard_log_v2\""
+            buildConfigField "String", "MAP_API_KEY", "\"AIzaSyBHka40HHCR0-bBdJYIX1zMiZiLuHch5i8\""
+            buildConfigField "String", "SLACK_INCOMING_HOOK", "\"https://hooks.slack.com/services/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\""
+            ext {
+                appName = "GB-stage"
+            }
+        }
+        prod {
+            dimension 'env'
+            buildConfigField "Boolean", 'IS_TEST', "false"
+            buildConfigField "Boolean", 'TEST_VISION', "false"
+            buildConfigField "String", "FLAGSMITH_KEY", "\"99BVnSryWURo7BK7u6sfUF\""
+            buildConfigField "String", "AMPLITUDE_API_KEY", "\"ebbd25a6a8e95e1f486b438ffeb86007\""
+            buildConfigField "String", "API_ENDPOINT", "\"https://api.gamerboard.live/graphql\""
+            buildConfigField "String", "ONE_SIGNAL_KEY", "\"928d6dc2-ba47-4611-b76f-7882b3209e90\""
+            buildConfigField "String", "SMARTLOOK_KEY", "\"eee4d57a38909887b938fed87ba9876665ccf8da\""
+            buildConfigField "String", "GS_BUCKET_URL", "\"gs://gamerboard-ffdde.appspot.com\""
+            buildConfigField "String", "GC_PROJECT_ID", "\"gamerboard-ffdde\""
+            buildConfigField "String", "GC_PUB_SUB_TOPIC", "\"gamerboard_log_v2\""
+            buildConfigField "String", "MAP_API_KEY", "\"AIzaSyBHka40HHCR0-bBdJYIX1zMiZiLuHch5i8\""
+            buildConfigField "String", "SLACK_INCOMING_HOOK", "\"https://hooks.slack.com/services/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\""
+            ext{
+                appName = "Gamerboard"
+            }
+        }
+        applicationVariants.all { variant ->
+            def flavor = variant.productFlavors[0]
+            variant.resValue "string", "app_name", "\"${flavor.ext.appName}\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '30.0.3'
+    androidResources {
+        noCompress 'tflite'
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        it.kotlinOptions.jvmTarget = "1.8" // Set the same Java version as above
+    }
+}
+kapt {
+    correctErrorTypes = true
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation(project(":gb_logging"))
+    implementation(project(":framedecoder"))
+
+    implementation(libs.ui.recyclerview)
+    implementation(libs.multidex)
+    implementation (libs.ui.material)
+
+    implementation libs.guava
+
+    implementation platform(libs.firebase.bom)
+    implementation ('com.google.firebase:firebase-analytics-ktx')
+    implementation( 'com.google.firebase:firebase-config-ktx')
+    implementation( 'com.google.firebase:firebase-crashlytics-ktx')
+    implementation( 'com.google.firebase:firebase-perf-ktx')
+    implementation( 'com.google.firebase:firebase-storage-ktx')
+    implementation( 'com.google.firebase:firebase-auth-ktx')
+    implementation( 'com.google.firebase:firebase-dynamic-links-ktx')
+    implementation ('com.google.firebase:firebase-functions-ktx'){
+        exclude group: 'com.google.firebase', module: 'firebase-iid'
+    }
+    implementation libs.firebase.iid
+
+    implementation(libs.kotlin.coroutines)
+    implementation(libs.kotlin)
+    implementation(libs.koin)
+    implementation(libs.koin.compat)
+    implementation(libs.tensorflow.lite)
+    implementation(libs.mlkit.text.recognition)
+    implementation(libs.ui.constraintlayout)
+    implementation(libs.statemachine)
+    implementation(libs.bundles.amplitude)
+    implementation(libs.gson)
+    implementation(libs.rootbeer)
+    implementation(libs.branch)
+    implementation(libs.onesignal)
+    implementation(libs.kotlin.serialization.json)
+    implementation(libs.kotlin.serialization.protobuf)
+    implementation(libs.work.manager)
+    implementation(libs.bundles.ui.dimens)
+    implementation(libs.ui.glide)
+    implementation(libs.graphql)
+    implementation(libs.pubsublite) {
+        exclude group: 'com.google.guava', module: 'guava'
+    }
+    implementation(libs.grpc.okhttp)
+
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
+
+    androidTestImplementation(libs.junit.android.ext)
+    androidTestImplementation(libs.espresso)
+    androidTestImplementation(libs.runner)
+    androidTestImplementation(libs.rules)
+    androidTestImplementation(libs.junit.ext)
+    androidTestImplementation(libs.truth.ext)
+    androidTestImplementation(libs.work.testing)
+    androidTestImplementation( libs.koin.androidx.workmanager)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.android.test.core)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.truth)
+
+    // Core library
+    //debugImplementation(libs.leakcanary)
+
+}
+
+configurations.configureEach {
+    exclude group: 'com.google.protobuf' ,module: 'protobuf-javalite'
+    exclude group: 'com.google.firebase', module: 'protolite-well-known-types'
+}
+
+apollo {
+    service("api") {
+        srcDir("../../graphql")
+        mapScalar("DateTime", "java.util.Date", "com.gamerboard.live.models.graphql.DateAdapter")
+        packageName.set("com.gamerboard.live")
+        schemaFile.set(file("../../schema.graphql"))
+    }
+
+}

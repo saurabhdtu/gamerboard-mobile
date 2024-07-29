@@ -1,0 +1,451 @@
+{
+  "active": [
+    {
+      "tournaments": [
+        {
+          "joinedAt": "2023-12-04 15:58:45",
+          "rank": null,
+          "score": null,
+          "tournament": {
+            "eSport": "BGMI",
+            "id": 1180,
+            "name": "NewSTest1",
+            "maxPrize": 100,
+            "userCount": 0,
+            "gameCount": 1,
+            "fee": 0,
+            "matchType": "classic",
+            "joinBy": "2023-12-04 15:58:45",
+            "joinCode": null,
+            "qualifiers": null,
+            "winningDistribution": [
+              {
+                "startRank": 1,
+                "endRank": 1,
+                "value": 1.0
+              },
+              {
+                "startRank": 2,
+                "endRank": 2,
+                "value": 1.0
+              }
+            ],
+            "matches": [],
+            "rules": {
+              "__typename": "BGMIRules",
+              "minUsers": 1,
+              "maxUsers": 10,
+              "bgmiMaxLevel": "ACE_DOMINATOR",
+              "bgmiMinLevel": "BRONZE_FIVE",
+              "bgmiAllowedModes": [
+                "classic"
+              ],
+              "bgmiAllowedMaps": [
+                "erangel",
+                "karakin",
+                "livik",
+                "miramar",
+                "sanhok",
+                "vikendi",
+                "nusa"
+              ],
+              "bgmiAllowedGroups": "solo"
+            },
+            "startTime": "2023-12-01 10:00:00",
+            "endTime": "2023-12-08 13:00:00"
+          },
+          "squad": null,
+          "tournamentMatchUser": null
+        },
+        {
+          "joinedAt": "2023-12-04 15:58:45",
+          "rank": null,
+          "score": null,
+          "tournament": {
+            "eSport": "BGMI",
+            "id": 1181,
+            "name": "NewSTest2",
+            "maxPrize": 100,
+            "userCount": 0,
+            "gameCount": 1,
+            "fee": 0,
+            "matchType": "classic",
+            "joinBy": "2023-12-04 15:58:45",
+            "joinCode": null,
+            "qualifiers": null,
+            "winningDistribution": [
+              {
+                "startRank": 1,
+                "endRank": 1,
+                "value": 1.0
+              },
+              {
+                "startRank": 2,
+                "endRank": 2,
+                "value": 1.0
+              }
+            ],
+            "matches": [],
+            "rules": {
+              "__typename": "BGMIRules",
+              "minUsers": 1,
+              "maxUsers": 10,
+              "bgmiMaxLevel": "ACE_DOMINATOR",
+              "bgmiMinLevel": "BRONZE_FIVE",
+              "bgmiAllowedModes": [
+                "classic"
+              ],
+              "bgmiAllowedMaps": [
+                "erangel",
+                "karakin",
+                "livik",
+                "miramar",
+                "sanhok",
+                "vikendi",
+                "nusa"
+              ],
+              "bgmiAllowedGroups": "solo"
+            },
+            "startTime": "2023-12-02 10:00:00",
+            "endTime": "2023-12-08 13:00:00"
+          },
+          "squad": null,
+          "tournamentMatchUser": null
+        },
+        {
+          "joinedAt": "2023-12-04 15:58:45",
+          "rank": null,
+          "score": null,
+          "tournament": {
+            "eSport": "BGMI",
+            "id": 1182,
+            "name": "NewSTest2",
+            "maxPrize": 100,
+            "userCount": 0,
+            "gameCount": 1,
+            "fee": 0,
+            "matchType": "headToHead",
+            "joinBy": "2023-12-02 23:44:00",
+            "joinCode": null,
+            "qualifiers": null,
+            "winningDistribution": [
+              {
+                "startRank": 1,
+                "endRank": 1,
+                "value": 1.0
+              },
+              {
+                "startRank": 2,
+                "endRank": 2,
+                "value": 1.0
+              }
+            ],
+            "matches": [
+              {
+                "tournamentId": 1182,
+                "endTime": "2023-12-04 15:58:45",
+                "startTime": "2023-12-02 23:45:00",
+                "id": 349,
+                "maxParticipants": 10,
+                "minParticipants": 1,
+                "metadata": {
+                  "roomId": null,
+                  "roomPassword": null
+                }
+              }
+            ],
+            "rules": {
+              "__typename": "BGMIRules",
+              "minUsers": 1,
+              "maxUsers": 10,
+              "bgmiMaxLevel": "ACE_DOMINATOR",
+              "bgmiMinLevel": "BRONZE_FIVE",
+              "bgmiAllowedModes": [
+                "classic"
+              ],
+              "bgmiAllowedMaps": [
+                "erangel",
+                "karakin",
+                "livik",
+                "miramar",
+                "sanhok",
+                "vikendi",
+                "nusa"
+              ],
+              "bgmiAllowedGroups": "solo"
+            },
+            "startTime": "2023-12-02 23:45:00",
+            "endTime": "2023-12-08 13:00:00"
+          },
+          "squad": null,
+          "tournamentMatchUser": null
+        },
+        {
+          "joinedAt": "2023-12-04 15:58:45",
+          "rank": null,
+          "score": null,
+          "tournament": {
+            "eSport": "BGMI",
+            "id": 1183,
+            "name": "NewSTest4",
+            "maxPrize": 100,
+            "userCount": 0,
+            "gameCount": 1,
+            "fee": 0,
+            "matchType": "headToHead",
+            "joinBy": "2023-12-03 23:44:00",
+            "joinCode": null,
+            "qualifiers": null,
+            "winningDistribution": [
+              {
+                "startRank": 1,
+                "endRank": 1,
+                "value": 1.0
+              },
+              {
+                "startRank": 2,
+                "endRank": 2,
+                "value": 1.0
+              }
+            ],
+            "matches": [
+              {
+                "tournamentId": 1183,
+                "endTime": "2023-12-04 15:58:45",
+                "startTime": "2023-12-03 23:45:00",
+                "id": 350,
+                "maxParticipants": 10,
+                "minParticipants": 1,
+                "metadata": {
+                  "roomId": null,
+                  "roomPassword": null
+                }
+              }
+            ],
+            "rules": {
+              "__typename": "BGMIRules",
+              "minUsers": 1,
+              "maxUsers": 10,
+              "bgmiMaxLevel": "ACE_DOMINATOR",
+              "bgmiMinLevel": "BRONZE_FIVE",
+              "bgmiAllowedModes": [
+                "classic"
+              ],
+              "bgmiAllowedMaps": [
+                "erangel",
+                "karakin",
+                "livik",
+                "miramar",
+                "sanhok",
+                "vikendi",
+                "nusa"
+              ],
+              "bgmiAllowedGroups": "solo"
+            },
+            "startTime": "2023-12-03 23:45:00",
+            "endTime": "2023-12-08 13:00:00"
+          },
+          "squad": null,
+          "tournamentMatchUser": null
+        }
+      ],
+      "type": "solo"
+    },
+    {
+      "tournaments": [
+        {
+          "joinedAt": "2023-12-04 15:58:45",
+          "rank": null,
+          "score": null,
+          "tournament": {
+            "eSport": "BGMI",
+            "id": 1179,
+            "name": "NewTest4",
+            "maxPrize": 100,
+            "userCount": 0,
+            "gameCount": 1,
+            "fee": 0,
+            "matchType": "classic",
+            "joinBy": "2023-12-04 15:58:45",
+            "joinCode": null,
+            "qualifiers": null,
+            "winningDistribution": [
+              {
+                "startRank": 1,
+                "endRank": 1,
+                "value": 1.0
+              },
+              {
+                "startRank": 2,
+                "endRank": 2,
+                "value": 1.0
+              }
+            ],
+            "matches": [],
+            "rules": {
+              "__typename": "BGMIRules",
+              "minUsers": 1,
+              "maxUsers": 10,
+              "bgmiMaxLevel": "ACE_DOMINATOR",
+              "bgmiMinLevel": "BRONZE_FIVE",
+              "bgmiAllowedModes": [
+                "classic"
+              ],
+              "bgmiAllowedMaps": [
+                "erangel",
+                "karakin",
+                "livik",
+                "miramar",
+                "sanhok",
+                "vikendi",
+                "nusa"
+              ],
+              "bgmiAllowedGroups": "squad"
+            },
+            "startTime": "2023-12-01 10:00:00",
+            "endTime": "2023-12-08 13:00:00"
+          },
+          "squad": null,
+          "tournamentMatchUser": null
+        },
+        {
+          "joinedAt": "2023-12-04 15:58:45",
+          "rank": null,
+          "score": null,
+          "tournament": {
+            "eSport": "BGMI",
+            "id": 1177,
+            "name": "NewTest1",
+            "maxPrize": 100,
+            "userCount": 0,
+            "gameCount": 1,
+            "fee": 0,
+            "matchType": "headToHead",
+            "joinBy": "2023-12-01 23:14:00",
+            "joinCode": null,
+            "qualifiers": null,
+            "winningDistribution": [
+              {
+                "startRank": 1,
+                "endRank": 1,
+                "value": 1.0
+              },
+              {
+                "startRank": 2,
+                "endRank": 2,
+                "value": 1.0
+              }
+            ],
+            "matches": [
+              {
+                "tournamentId": 1177,
+                "endTime": "2023-12-04 15:58:45",
+                "startTime": "2023-12-01 23:15:00",
+                "id": 347,
+                "maxParticipants": 10,
+                "minParticipants": 1,
+                "metadata": {
+                  "roomId": null,
+                  "roomPassword": null
+                }
+              }
+            ],
+            "rules": {
+              "__typename": "BGMIRules",
+              "minUsers": 1,
+              "maxUsers": 10,
+              "bgmiMaxLevel": "ACE_DOMINATOR",
+              "bgmiMinLevel": "BRONZE_FIVE",
+              "bgmiAllowedModes": [
+                "classic"
+              ],
+              "bgmiAllowedMaps": [
+                "erangel",
+                "karakin",
+                "livik",
+                "miramar",
+                "sanhok",
+                "vikendi",
+                "nusa"
+              ],
+              "bgmiAllowedGroups": "squad"
+            },
+            "startTime": "2023-12-01 23:15:00",
+            "endTime": "2023-12-08 13:00:00"
+          },
+          "squad": null,
+          "tournamentMatchUser": null
+        },
+        {
+          "joinedAt": "2023-12-04 15:58:45",
+          "rank": null,
+          "score": null,
+          "tournament": {
+            "eSport": "BGMI",
+            "id": 1178,
+            "name": "NewTest2",
+            "maxPrize": 100,
+            "userCount": 0,
+            "gameCount": 1,
+            "fee": 0,
+            "matchType": "headToHead",
+            "joinBy": "2023-12-02 23:44:00",
+            "joinCode": null,
+            "qualifiers": null,
+            "winningDistribution": [
+              {
+                "startRank": 1,
+                "endRank": 1,
+                "value": 1.0
+              },
+              {
+                "startRank": 2,
+                "endRank": 2,
+                "value": 1.0
+              }
+            ],
+            "matches": [
+              {
+                "tournamentId": 1178,
+                "endTime": "2023-12-04 15:58:45",
+                "startTime": "2023-12-02 23:45:00",
+                "id": 348,
+                "maxParticipants": 10,
+                "minParticipants": 1,
+                "metadata": {
+                  "roomId": null,
+                  "roomPassword": null
+                }
+              }
+            ],
+            "rules": {
+              "__typename": "BGMIRules",
+              "minUsers": 1,
+              "maxUsers": 10,
+              "bgmiMaxLevel": "ACE_DOMINATOR",
+              "bgmiMinLevel": "BRONZE_FIVE",
+              "bgmiAllowedModes": [
+                "classic"
+              ],
+              "bgmiAllowedMaps": [
+                "erangel",
+                "karakin",
+                "livik",
+                "miramar",
+                "sanhok",
+                "vikendi",
+                "nusa"
+              ],
+              "bgmiAllowedGroups": "squad"
+            },
+            "startTime": "2023-12-02 23:45:00",
+            "endTime": "2023-12-08 13:00:00"
+          },
+          "squad": null,
+          "tournamentMatchUser": null
+        }
+      ],
+      "type": "squad"
+    }
+  ]
+}

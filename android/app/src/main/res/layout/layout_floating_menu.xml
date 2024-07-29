@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_expanded"
+    android:layout_width="@dimen/floating_menu_width"
+    android:layout_height="@dimen/floating_menu_height">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_menu"
+        android:layout_width="@dimen/floating_menu_width"
+        android:layout_height="@dimen/floating_menu_height"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bg_curved_rect"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingVertical="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_profile_status_large"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:padding="@dimen/_4ssp"
+                android:src="@drawable/ic_unverified" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:minWidth="8dp"
+                android:singleLine="true"
+                android:text="@string/unverified"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_2"
+                tools:ignore="SmallSp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/thin_line"
+            android:background="#474C57" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_help"
+            android:layout_width="@dimen/menu_icon_container_size"
+            android:layout_height="@dimen/menu_icon_container_size"
+            android:padding="@dimen/icon_padding"
+            android:src="@drawable/ic_help" />
+
+        <RelativeLayout
+            android:id="@+id/menu_leaderboard_highlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_leaderboard"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:padding="@dimen/_12sdp"
+                android:src="@drawable/ic_leaderboard" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_open"
+            android:layout_width="@dimen/menu_icon_container_size"
+            android:layout_height="@dimen/menu_icon_container_size"
+            android:padding="@dimen/icon_padding"
+            android:src="@drawable/ic_app_open" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_stop"
+            android:layout_width="@dimen/menu_icon_container_size"
+            android:layout_height="@dimen/menu_icon_container_size"
+            android:padding="@dimen/icon_padding"
+            android:src="@drawable/ic_stop_gb" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

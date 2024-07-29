@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_accent">#471ad6</color>
+    <color name="bg_dark_1">#0D0D0D</color>
+    <color name="bg_dark_2">#121212</color>
+    <color name="bg_dark_3">#1B1B1C</color>
+    <color name="bg_dark_4">#222224</color>
+    <color name="bg_floating_ui_dark">#17191B</color>
+    <color name="txt_color_sub_dark">#9E9E9E</color>
+    <color name="inactive">#F64464</color>
+    <color name="verified">#14DEAE</color>
+    <color name="unverified">#F64464</color>
+    <color name="verified_bg">#142311</color>
+    <color name="unverified_bg">#543B47</color>
+
+    <color name="separator">#3e3e3e</color>
+    <color name="txt_color">#dadedf</color>
+    <color name="txt_white">#ffffff</color>
+    <color name="txt_accent_3">#5821dc</color>
+    <color name="txt_accent_4">#692be4</color>
+    <color name="txt_accent_5">#7530eb</color>
+    <color name="txt_accent_6">#DADEDF</color>
+
+    <color name="txt_color_white">#FFFFFF</color>
+    <color name="txt_color_inactive">#6B595959</color>
+    <color name="txt_color_light_grey">#797B7D</color>
+
+
+    <color name="bg_overlay_popup_gradient_light">#535561</color>
+    <color name="bg_overlay_popup_gradient_dark">#1D2223</color>
+    <color name="bg_overlay_menu_item_highlight">#FFE144</color>
+    <color name="bg_scores_top3_dark">#161C25</color>
+    <color name="bg_game_end_overlay_dark">#2B2B2B</color>
+    <color name="bg_bgmi_id_input_box">#12151B</color>
+
+    <color name="btn_stroke_light_grey">#797B7D</color>
+    <color name="btn_confirm_bg_dark">#24282E</color>
+    <color name="bg_block_screen_color">#B8000000</color>
+    <color name="bg_block_screen_color_dark">#DA000000</color>
+    <color name="bg_block_screen_color_transparent">#00000000</color>
+    <color name="text_green">#2FD8B0</color>
+    <color name="btn_bg_stroke">#B9A3F2</color>
+    <color name="btn_bg_solid">#6C43E5</color>
+    <color name="btn_txt_solid">#FFFFFF</color>
+
+</resources>

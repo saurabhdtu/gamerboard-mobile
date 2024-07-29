@@ -1,0 +1,1051 @@
+type Achievement {
+  bestPerformance: UserTournament
+  tournamentSummary: [AchievementSummary]!
+}
+
+type AchievementSummary {
+  KDRatio: Float
+  eSport: ESports!
+  group: String!
+  matchType: MatchType!
+  maxTier: String
+  played: Int!
+  topTenCount: Int!
+}
+
+type ActiveTournamentList {
+  tournaments: [UserTournament!]!
+  type: String!
+}
+
+input AddTournamentMatch {
+  maxParticipants: Int!
+  metadata: TournamentMatchMetadataInput
+  minParticipants: Int
+  startTime: DateTime!
+}
+
+input AddUserInput {
+  birthdate: Date
+  image: String
+  name: String!
+  phone: String!
+  referralCode: String
+  username: String!
+}
+
+type BGMIRules implements TournamentRules {
+  allowedGroups: BgmiGroups!
+  allowedMaps: [BgmiMaps!]!
+  allowedModes: [BgmiModes!]!
+  maxLevel: BgmiLevels!
+  maxTeams: Int!
+  maxUsers: Int!
+  minLevel: BgmiLevels!
+  minTeams: Int!
+  minUsers: Int!
+}
+
+input BGMIRulesInput {
+  allowedGroups: BgmiGroups!
+  allowedMaps: [BgmiMaps!]!
+  allowedModes: [BgmiModes!]!
+  maxLevel: BgmiLevels!
+  maxTeams: Int!
+  maxUsers: Int!
+  minLevel: BgmiLevels!
+  minTeams: Int!
+  minUsers: Int!
+}
+
+input BanUserInput {
+  endTime: DateTime!
+  reason: String!
+  startTime: DateTime!
+  userId: Int!
+}
+
+type BannedUsers {
+  endTime: DateTime!
+  id: Int!
+  reason: String!
+  startTime: DateTime!
+  userId: Int!
+}
+
+type BaseTournamentRules implements TournamentRules {
+  maxTeams: Int!
+  maxUsers: Int!
+  minTeams: Int!
+  minUsers: Int!
+}
+
+type BgmiGame implements Game {
+  eSport: ESports!
+  id: Int!
+  isManual: Boolean
+  level: BgmiLevels!
+  metadata: BgmiMetadata!
+  playedAt: DateTime!
+  rank: Int!
+  recording: String
+  score: Float!
+  submittedAt: DateTime!
+  teamRank: Int
+  userId: Int!
+}
+
+enum BgmiGroups {
+  duo
+  solo
+  squad
+}
+
+enum BgmiMaps {
+  erangel
+  karakin
+  livik
+  miramar
+  nusa
+  sanhok
+  vikendi
+}
+
+type BgmiMetadata {
+  finalTier: Int!
+  group: BgmiGroups!
+  initialTier: Int!
+  kills: Int!
+  map: BgmiMaps!
+}
+
+enum BgmiModes {
+  classic
+}
+
+type BgmiProfile {
+  eSport: ESports!
+  metadata: BgmiProfileMetadata!
+  profileId: String
+  userId: Int!
+  username: String
+}
+
+input BgmiProfileInput {
+  metadata: BgmiProfileMetadataInput
+  profileId: String
+  username: String
+}
+
+type BgmiProfileMetadata {
+  levels: [BgmiProfileMetadataLevel!]
+}
+
+input BgmiProfileMetadataInput {
+  levels: [BgmiProfilemetadataLevelInput!]
+}
+
+type BgmiProfileMetadataLevel {
+  group: BgmiGroups!
+  level: BgmiLevels!
+}
+
+input BgmiProfilemetadataLevelInput {
+  group: BgmiGroups!
+  level: BgmiLevels!
+}
+
+type Bucket {
+  bufferSize: Int!
+  labels: [Label!]!
+}
+
+type BucketData {
+  gameScreenBucket: Bucket!
+  homeScreenBucket: Bucket!
+  loginScreenBucket: Bucket!
+  myProfileScreen: Bucket!
+  playAgain: Bucket!
+  resultRank: Bucket!
+  resultRankKills: Bucket!
+  resultRankRating: Bucket!
+  waitingScreenBucket: Bucket!
+}
+
+input ChangeSquadInput {
+  newSquadId: Int!
+  tournamentId: Int!
+}
+
+input CreateBGMITournamentInput {
+  endTime: DateTime!
+  fee: Int
+  fixedPrize: Int
+  gameCount: Int!
+  name: String!
+  rules: BGMIRulesInput!
+  startTime: DateTime!
+  winningDistribution: [WinningDistributionInput!]!
+}
+
+input CreateFFTournamentInput {
+  endTime: DateTime!
+  fee: Int
+  fixedPrize: Int
+  gameCount: Int!
+  name: String!
+  rules: FFRulesInput!
+  startTime: DateTime!
+  winningDistribution: [WinningDistributionInput!]!
+}
+
+input CreateSquadInput {
+  name: String!
+  tournamentId: Int!
+}
+
+input CreateTournamentInput {
+  bgmiRules: BGMIRulesInput
+  endTime: DateTime!
+  fee: Int
+  ffMaxRules: FFRulesInput
+  fixedPrize: Int
+  gameCount: Int!
+  joinBy: DateTime
+  matchType: MatchType!
+  matches: [AddTournamentMatch!]
+  name: String!
+  qualifiers: [CustomQualificationRulesInput!]
+  startTime: DateTime!
+  winningDistribution: [WinningDistributionInput!]!
+}
+
+enum CustomQualificationRuleTypes {
+  NUM_GAMES_SINCE
+  NUM_TOURNAMENTS_SINCE
+  RANK_BY_TOURNAMENT
+  RANK_SINCE
+  SIGNUP_AGE
+}
+
+type CustomQualificationRules {
+  rule: CustomQualificationRuleTypes!
+  value: JSON!
+}
+
+input CustomQualificationRulesInput {
+  rule: CustomQualificationRuleTypes!
+  value: JSON!
+}
+
+type CustomRoomSquadResult {
+  members: [CustomRoomSquadResultMember!]!
+  rank: Int!
+  rejectionReason: String
+  score: Int!
+  squadId: Int
+}
+
+type CustomRoomSquadResultMember {
+  kills: Int!
+  level: Int!
+  metadata: CustomRoomSquadResultMemberMetadata!
+  tournamentMatchUserId: Int
+  userId: Int!
+}
+
+type CustomRoomSquadResultMemberMetadata {
+  finalTier: Int!
+  group: BgmiGroups!
+  initialTier: Int!
+  kills: Int!
+  map: BgmiMaps!
+}
+
+scalar Date
+
+scalar DateTime
+
+type DefaultPayload {
+  message: String!
+}
+
+input DisqualifyUserInput {
+  disqualifyReason: String!
+  tournamentIds: [Int!]!
+  userId: Int!
+}
+
+enum ESports {
+  BGMI
+  FREEFIREMAX
+}
+
+type FFMaxProfile {
+  eSport: ESports!
+  metadata: FFMaxProfileMetadata!
+  profileId: String
+  userId: Int!
+  username: String
+}
+
+input FFMaxProfileInput {
+  metadata: FFMaxProfileMetadataInput
+  profileId: String
+  username: String
+}
+
+type FFMaxProfileMetadata {
+  levels: [FFMaxProfileMetadataLevel!]
+}
+
+input FFMaxProfileMetadataInput {
+  levels: [FFMaxProfilemetadataLevelInput!]
+}
+
+type FFMaxProfileMetadataLevel {
+  group: FfMaxGroups!
+  level: FfMaxLevels!
+}
+
+input FFMaxProfilemetadataLevelInput {
+  group: FfMaxGroups!
+  level: FfMaxLevels!
+}
+
+type FFMaxRules implements TournamentRules {
+  allowedGroups: FfMaxGroups!
+  allowedMaps: [FfMaxMaps!]!
+  allowedModes: [FfMaxModes!]!
+  maxLevel: FfMaxLevels!
+  maxTeams: Int!
+  maxUsers: Int!
+  minLevel: FfMaxLevels!
+  minTeams: Int!
+  minUsers: Int!
+}
+
+input FFRulesInput {
+  allowedGroups: FfMaxGroups!
+  allowedMaps: [FfMaxMaps!]!
+  allowedModes: [FfMaxModes!]!
+  maxLevel: FfMaxLevels!
+  maxTeams: Int!
+  maxUsers: Int!
+  minLevel: FfMaxLevels!
+  minTeams: Int!
+  minUsers: Int!
+}
+
+type FfMaxGame implements Game {
+  eSport: ESports!
+  id: Int!
+  isManual: Boolean
+  level: FfMaxLevels!
+  metadata: FfMaxMetadata!
+  playedAt: DateTime!
+  rank: Int!
+  recording: String
+  score: Float!
+  submittedAt: DateTime!
+  teamRank: Int
+  userId: Int!
+}
+
+enum FfMaxGroups {
+  duo
+  solo
+  squad
+}
+
+enum FfMaxMaps {
+  alpine
+  bermuda
+  nexterra
+  purgatory
+}
+
+type FfMaxMetadata {
+  finalTier: Int!
+  group: FfMaxGroups!
+  initialTier: Int!
+  kills: Int!
+  map: FfMaxMaps!
+}
+
+enum FfMaxModes {
+  BRRanked
+}
+
+interface Game {
+  eSport: ESports!
+  id: Int!
+  isManual: Boolean
+  metadata: GameMetadata!
+  playedAt: DateTime!
+  rank: Int!
+  recording: String
+  score: Float!
+  submittedAt: DateTime!
+  teamRank: Int
+  userId: Int!
+}
+
+union GameMetadata = BgmiMetadata | FfMaxMetadata
+
+type GameStats {
+  eSport: String
+  gamesplayed: Int
+  group: String
+}
+
+scalar JSON
+
+input JoinSquadInput {
+  inviteCode: String!
+  tournamentId: Int!
+}
+
+type Label {
+  index: Int!
+  individualOCR: Boolean!
+  mandatory: Boolean
+  name: String!
+  shouldPerformScaleAndStitching: Boolean
+  sortOrder: SortOrder!
+  threshold: Float!
+}
+
+type Leaderboard {
+  behindBy: Int!
+  details: LeaderboardInfo
+  id: String!
+  rank: Int!
+  score: Int!
+  tournamentId: Int!
+  isDisqualified: Boolean!
+  user: User!
+}
+
+enum LeaderboardDirection {
+  Next
+  Prev
+}
+
+type LeaderboardInfo {
+  gamesPlayed: Int!
+  top: [Game]!
+}
+
+input LeaderboardInput {
+  direction: LeaderboardDirection
+  page: Int
+  pageSize: Int
+  tournamentId: Int!
+  userId: Int
+}
+
+type LedgerTransaction {
+  amount: Float!
+  createdAt: Date!
+  description: String!
+  id: Int!
+  metadata: String
+  platform: PaymentMedium
+  platformTransactionId: String
+  status: TransactionStatus!
+  subWallet: SubWalletType!
+  transactionId: String!
+  wallet: Wallet!
+  walletId: Int!
+}
+
+type Location {
+  city: String
+  country: String
+  lat: Float
+  lng: Float
+  region: String
+}
+
+input LocationInput {
+  city: String
+  country: String
+  lat: Float
+  lng: Float
+  region: String
+}
+
+type LoggedInUser {
+  token: String!
+  user: User
+}
+
+enum MatchType {
+  classic
+  headToHead
+}
+
+type ModelParam {
+  bucket: BucketData
+  labels: [Label!]!
+  model_name: String!
+  model_url: String!
+}
+
+type Mutation {
+  addGameToTournament(input: SubmitBgmiGame!, tournamentId: Int!, userId: Int!): SubmitGameResponse!
+  addUser(input: AddUserInput!): LoggedInUser!
+  banUser(userInput: BanUserInput!): Boolean!
+  cancel(id: Int!, reason: String!): DefaultPayload!
+  changeSquad(input: ChangeSquadInput!): Squad!
+  close(id: Int!): DefaultPayload!
+  createBGMITournament(input: CreateBGMITournamentInput!): Tournament! @deprecated(reason: "Use createTournament instead")
+  createProfile(input: ProfileInput!): Profile!
+  createSOS(tournamentId: Int!): DefaultPayload!
+  createSquad(input: CreateSquadInput!): Squad!
+  createTournament(eSport: ESports!, input: CreateTournamentInput!, inviteOnly: Boolean): Tournament!
+  deleteSquad(id: Int!): DefaultPayload!
+  depositUPIManual(amount: Float!, upi: String!): TransactionResponse!
+  disqualifyUser(input: DisqualifyUserInput!): Boolean!
+  enterTournament(joinCode: String, phone: String, squadInfo: TournamentJoiningSquadInfo, tournamentId: Int!): UserTournament!
+  generateInviteCodes(count: Int!): DefaultPayload!
+  generateOTP(phone: String!): DefaultPayload!
+  joinSquad(input: JoinSquadInput!): Squad!
+  joinTournament(joinCode: String, phone: String, tournamentId: Int!): DefaultPayload!
+  paymentCreation(amount: Int!, targetApp: String!): PhonepeResponse!
+  refund(id: Int!): Tournament! @deprecated
+  startTournamentMatch(roomId: String!, roomPassword: String!, tournamentMatchId: Int!): DefaultPayload!
+  submitBgmiGame(input: SubmitBgmiGame!): SubmitGameResponse!
+  submitCustomRoomResult(input: SubmitCustomRoomResultInput!): [CustomRoomSquadResult!]!
+  submitFeedback(input: SubmitFeedbackInput!): DefaultPayload
+  submitFfMaxGame(input: SubmitFfMaxGame!): SubmitGameResponse!
+  submitPreferences(input: PreferencesInput!): UserPreference!
+  unbanUser(userId: Int!): Boolean!
+  undisqualifysUser(tournamentIds: [Int!]!, userId: Int!): Boolean!
+  unlockSquad(inviteCode: String!): Boolean!
+  updateProfile(input: ProfileInput!): Profile!
+  updateSquad(id: Int!, input: UpdateSquadInput!): Squad!
+  validateUPIDeposit(accept: Boolean!, ledgerId: Int!): Boolean!
+  withdrawUPI(amount: Float!, upi: String!): TransactionResponse!
+}
+
+enum PaymentMedium {
+  paytm
+  razorpay
+}
+
+type PhonepeResponse {
+  intentUrl: String!
+  ledgerId: Int!
+  success: Boolean!
+}
+
+enum PlayingReasonPreference {
+  Competitive
+  Fun
+  Learning
+  Rewards
+}
+
+input PreferencesInput {
+  location: LocationInput
+  playingReason: [PlayingReasonPreference!]
+  roles: [RolePreference!]
+  timeOfDay: [TimeOfDayPreference!]
+  timeOfWeek: TimeOfWeekPreference
+}
+
+type Profile {
+  eSport: ESports!
+  metadata: ProfileMetadata!
+  profileId: String
+  userId: Int!
+  username: String
+}
+
+input ProfileInput {
+  bgmiProfile: BgmiProfileInput
+  eSport: ESports!
+  ffMaxProfile: FFMaxProfileInput
+}
+
+scalar ProfileLevel
+
+union ProfileMetadata = BgmiProfileMetadata | FFMaxProfileMetadata
+
+type Query {
+  active(eSport: ESports!): [ActiveTournamentList!]!
+  checkESportProfile(eSport: ESports!, profileId: String!): Boolean!
+  checkExistingNumber(phone: String!): Boolean!
+  checkUniqueUser(phone: String, username: String): UniqueUserResponse!
+  getAllMatchParticipants(tournamentMatchId: Int!): [TournamentMatchParticipant!]
+  getAllTournaments: [Tournament!]!
+  getBannedUser(userId: Int!): [BannedUsers]
+  getBannedUsers: [BannedUsers]
+  getESportTournaments(eSport: ESports!, matchType: MatchType): [Tournament!]!
+  getTournamentMatchUser(tournamentMatchId: Int!): TournamentMatchUser!
+  getTournamentMatches(tournamentId: Int!): [TournamentMatch!]!
+  getTournamentQualification(tournamentId: Int!): tournamentQualificationResult!
+  getUserbyUsername(username: String!): User
+  history(eSport: ESports!): [UserTournament!]!
+  inviteList(tournamentId: Int!): [User!]!
+  inviteMember(squadId: Int!, userId: Int!): Boolean
+  leaderboard(input: LeaderboardInput!): [Leaderboard!]!
+  login(otp: Int!, phone: String!): LoggedInUser!
+  loginOTPLess(token: String!): LoggedInUser!
+  lowRatingReasons: [String!]!
+  me: User!
+  modelParam(eSport: ESports!): ModelParam
+  pendingUPIDeposits: [LedgerTransaction!]!
+  scoring(eSport: ESports): Scoring!
+  searchByPreferences(preferences: PreferencesInput!): [User]!
+  searchUser(bgmiID: String, pageNumber: Int, pageSize: Int, phone: String, username: String): [User]!
+  searchUserESports(eSport: ESports!, pageNumber: Int, pageSize: Int, phone: String, profileId: String, username: String): [User]!
+  squadLeaderboard(input: SquadLeaderboardInput!): [SquadLeaderboard!]!
+  stats: Stats
+  top(eSport: ESports!): [UserTournament!]!
+  topWinners(count: Int!, from: DateTime!, to: DateTime!): [TopWinners!]!
+  tournament(tournamentId: Int!): UserTournament
+  tournamentAllSquads(tournamentId: Int!): [Squad]!
+  tournamentSquad(tournamentId: Int!): Squad
+  transaction(id: Int!): LedgerTransaction
+  transactions: [LedgerTransaction!]!
+}
+
+type RankPoint {
+  points: Int!
+  rank: Int!
+}
+
+enum RolePreference {
+  Assaulter
+  Coach
+  Commander
+  Fragger
+  Healer
+  IGL
+  Scout
+  Sniper
+  Support
+  VehicleSpecialist
+}
+
+type Scoring {
+  killPoints: Int!
+  rankPoints: [RankPoint!]!
+}
+
+type SlotInfo {
+  teamNumber: Int
+}
+
+enum SortOrder {
+  HORIZONTAL
+  PERFORMANCE
+  SKIP
+  VERTICAL
+}
+
+type Squad {
+  createdAt: DateTime!
+  id: Int!
+  inviteCode: String!
+  leader: User!
+  maxMembers: Int!
+  members: [SquadMember!]!
+  name: String!
+  tournament: Tournament!
+  isDisqualified: Boolean!
+}
+
+type SquadLeaderboard {
+  behindBy: Int!
+  details: SquadLeaderboardInfo
+  id: String!
+  rank: Int!
+  score: Int!
+  squad: Squad
+  isDisqualified: Boolean!
+  tournamentId: Int!
+}
+
+type SquadLeaderboardInfo {
+  gamesPlayed: Int!
+  top: [[Game]]!
+}
+
+input SquadLeaderboardInput {
+  direction: LeaderboardDirection
+  page: Int
+  pageSize: Int
+  squadId: Int
+  tournamentId: Int!
+}
+
+type SquadMember {
+  isReady: Boolean!
+  status: String!
+  user: User!
+}
+
+input SquadMemberGameInfo {
+  kills: Int!
+  username: String!
+}
+
+type SquadScoresResponse {
+  kills: Int!
+  user: User!
+  userId: Int!
+}
+
+type Stats {
+  games: [GameStats]
+}
+
+enum SubWalletType {
+  bonus
+  deposit
+  winning
+}
+
+type SubmissionStateResponse {
+  hasSubmitted: Boolean!
+  user: User!
+  userId: Int!
+}
+
+input SubmitBgmiGame {
+  finalTier: BgmiLevels!
+  group: BgmiGroups!
+  initialTier: BgmiLevels!
+  kills: Int!
+  map: BgmiMaps!
+  playedAt: DateTime!
+  rank: Int!
+  recording: String
+  squadScoring: [SquadMemberGameInfo!]
+  teamRank: Int
+}
+
+input SubmitCustomRoomResultInput {
+  teams: [SubmitCustomRoomResultTeamInput!]!
+  tournamentMatchId: Int!
+}
+
+input SubmitCustomRoomResultMemberInput {
+  kills: Int!
+  userId: Int
+  username: String!
+}
+
+input SubmitCustomRoomResultTeamInput {
+  members: [SubmitCustomRoomResultMemberInput!]!
+  rank: Int!
+  squadId: Int
+}
+
+input SubmitFeedbackInput {
+  collectionEvent: String!
+  comments: String
+  rating: Int!
+  ratingReason: String
+}
+
+input SubmitFfMaxGame {
+  finalTier: FfMaxLevels!
+  group: FfMaxGroups!
+  initialTier: FfMaxLevels!
+  kills: Int!
+  map: FfMaxMaps!
+  playedAt: DateTime!
+  rank: Int!
+  recording: String
+  squadScoring: [SquadMemberGameInfo!]
+  teamRank: Int
+}
+
+type SubmitGameResponse {
+  game: Game!
+  tournaments: [SubmittedGameTournament]!
+}
+
+type SubmittedGameTournament {
+  exclusionReason: String
+  id: Int!
+  isAdded: Boolean!
+  isTop: Boolean!
+  squadScores: [SquadScoresResponse!]
+  submissionState: [SubmissionStateResponse!]
+  tournament: Tournament!
+}
+
+enum TimeOfDayPreference {
+  Morning
+  Afternoon
+  Evening
+}
+
+enum TimeOfWeekPreference {
+  Weekdays
+  Weekends
+  Both
+}
+
+type TopWinners {
+  amount: Float!
+  user: User!
+  userId: Int!
+}
+
+type Tournament {
+  cancellationReason: String
+  cancelled: Boolean!
+  closed: Boolean!
+  eSport: ESports!
+  endTime: DateTime!
+  fee: Int!
+  fixedPrize: Int
+  gameCount: Int!
+  id: Int!
+  joinBy: DateTime
+  joinCode: String
+  matchType: MatchType!
+  matches: [TournamentMatch!]
+  maxPrize: Int!
+  name: String!
+  qualifiers: [CustomQualificationRules!]
+  rules: TournamentRules!
+  startTime: DateTime!
+  teamCount: Int!
+  tournamentState: TournamentState!
+  userCount: Int!
+  winningDistribution: [WinningDistribution!]!
+}
+
+input TournamentJoiningSquadInfo {
+  inviteCode: String
+  name: String
+}
+
+type TournamentMatch {
+  endTime: DateTime
+  id: Int!
+  maxParticipants: Int!
+  metadata: TournamentMatchMetadata
+  minParticipants: Int
+  startTime: DateTime!
+  tournamentId: Int!
+}
+
+type TournamentMatchMetadata {
+  roomId: String
+  roomPassword: String
+}
+
+input TournamentMatchMetadataInput {
+  roomId: String
+  roomPassword: String
+}
+
+type TournamentMatchParticipant {
+  createdAt: DateTime!
+  gbUsername: String
+  id: Int!
+  notJoined: Boolean!
+  profileId: String
+  slotInfo: SlotInfo
+  squadId: Int
+  squadName: String
+  tournamentMatchId: Int!
+  tournamentUserId: Int!
+  userId: Int!
+  username: String
+}
+
+type TournamentMatchUser {
+  createdAt: DateTime!
+  id: Int!
+  notJoined: Boolean!
+  slotInfo: SlotInfo
+  sos: DateTime
+  tournamentMatchId: Int!
+  tournamentUserId: Int!
+}
+
+interface TournamentRules {
+  maxTeams: Int!
+  maxUsers: Int!
+  minTeams: Int!
+  minUsers: Int!
+}
+
+enum TournamentState {
+  active
+  cancelled
+  completed
+  inactive
+}
+
+type TransactionResponse {
+  success: Boolean!
+  transactionId: String
+  wallet: Wallet!
+}
+
+enum TransactionStatus {
+  cancelled
+  failed
+  processing
+  successful
+}
+
+type UniqueUserResponse {
+  phone: Boolean!
+  username: Boolean!
+}
+
+input UpdateSquadInput {
+  name: String!
+}
+
+type User {
+  achievements: Achievement!
+  birthdate: Date
+  flags: UserFlags!
+  id: Int!
+  image: String
+  inviteCode: String!
+  name: String!
+  phone: String
+  preferences: UserPreference
+  profiles: [Profile!]
+  username: String!
+  wallet: Wallet!
+}
+
+type UserFlags {
+  allowSquadCreation: Boolean
+}
+
+input UserFlagsInput {
+  allowSquadCreation: Boolean
+}
+
+type UserPreference {
+  location: Location
+  playingReason: [PlayingReasonPreference!]
+  roles: [RolePreference!]
+  timeOfDay: [TimeOfDayPreference!]
+  timeOfWeek: TimeOfWeekPreference
+}
+
+type UserTournament {
+  joinedAt: DateTime
+  rank: Int
+  score: Int
+  squad: Squad
+  tournament: Tournament!
+  tournamentMatchUser: TournamentMatchUser
+  userId: Int
+}
+
+type Wallet {
+  bonus: Float!
+  deposit: Float!
+  id: Int!
+  user: User!
+  userId: Int!
+  winning: Float!
+}
+
+type WinningDistribution {
+  endRank: Int!
+  startRank: Int!
+  value: Float!
+}
+
+input WinningDistributionInput {
+  endRank: Int!
+  startRank: Int!
+  value: Float!
+}
+
+type tournamentEntryRuleQualification {
+  current: Int!
+  qualified: Boolean!
+  required: Int!
+  rule: String!
+}
+
+type tournamentQualificationResult {
+  qualified: Boolean!
+  rules: [tournamentEntryRuleQualification!]!
+}
+
+enum BgmiLevels {
+  BRONZE_FIVE
+  BRONZE_FOUR
+  BRONZE_THREE
+  BRONZE_TWO
+  BRONZE_ONE
+  SILVER_FIVE
+  SILVER_FOUR
+  SILVER_THREE
+  SILVER_TWO
+  SILVER_ONE
+  GOLD_FIVE
+  GOLD_FOUR
+  GOLD_THREE
+  GOLD_TWO
+  GOLD_ONE
+  PLATINUM_FIVE
+  PLATINUM_FOUR
+  PLATINUM_THREE
+  PLATINUM_TWO
+  PLATINUM_ONE
+  DIAMOND_FIVE
+  DIAMOND_FOUR
+  DIAMOND_THREE
+  DIAMOND_TWO
+  DIAMOND_ONE
+  CROWN_FIVE
+  CROWN_FOUR
+  CROWN_THREE
+  CROWN_TWO
+  CROWN_ONE
+  ACE
+  ACE_MASTER
+  ACE_DOMINATOR
+  CONQUEROR
+}
+
+enum FfMaxLevels {
+  BRONZE_ONE
+  BRONZE_TWO
+  BRONZE_THREE
+  SILVER_ONE
+  SILVER_TWO
+  SILVER_THREE
+  GOLD_ONE
+  GOLD_TWO
+  GOLD_THREE
+  GOLD_FOUR
+  PLATINUM_ONE
+  PLATINUM_TWO
+  PLATINUM_THREE
+  PLATINUM_FOUR
+  DIAMOND_ONE
+  DIAMOND_TWO
+  DIAMOND_THREE
+  DIAMOND_FOUR
+  HEROIC
+  MASTER
+  GRANDMASTER_ONE
+  GRANDMASTER_TWO
+  GRANDMASTER_THREE
+  GRANDMASTER_FOUR
+  GRANDMASTER_FIVE
+  GRANDMASTER_SIX
+}

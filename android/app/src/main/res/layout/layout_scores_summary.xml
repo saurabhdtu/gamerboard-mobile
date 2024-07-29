@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_dark_2"
+    android:orientation="vertical"
+    android:padding="@dimen/text_container_padding_h1">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/gantari"
+        android:text="Match summary"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_5"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_game_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/gantari"
+        android:text="Match Rank: 2nd"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_4"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/tv_kills_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gantari"
+        android:text="+14 pts"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_4"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rank_points"
+        app:layout_constraintStart_toStartOf="@+id/tv_rank_points"
+        app:layout_constraintTop_toTopOf="@+id/tv_game_kills" />
+
+    <TextView
+        android:id="@+id/tv_rank_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:fontFamily="@font/gantari"
+        android:text="+8 pts"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/tv_game_rank" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/thin_line"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="#C4C4C4"
+        app:layout_constraintEnd_toEndOf="@+id/tv_kills_points"
+        app:layout_constraintStart_toStartOf="@+id/tv_game_kills"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_kills" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:fontFamily="@font/gantari"
+        android:maxLines="1"
+        android:text="Match points"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_4"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/thin_line"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:background="#24282E"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <TextView
+        android:id="@+id/tv_match_points"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/gantari"
+        android:gravity="center"
+        android:text="+22pts"
+        android:textColor="@color/txt_color"
+        android:textFontWeight="800"
+        android:textSize="@dimen/text_4"
+        app:layout_constraintEnd_toEndOf="@+id/tv_kills_points"
+        app:layout_constraintStart_toStartOf="@+id/tv_kills_points"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_container_padding_h1"
+        android:fontFamily="@font/gantari"
+        android:gravity="center"
+        android:text="Points will be added to your qualifying leaderboards"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/tv_game_kills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Match kills: 8"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_4"
+        app:layout_constraintStart_toStartOf="@+id/tv_game_rank"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_rank" />
+</androidx.constraintlayout.widget.ConstraintLayout>

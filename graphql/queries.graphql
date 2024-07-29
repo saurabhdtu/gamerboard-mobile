@@ -1,0 +1,382 @@
+############## Queries ####################
+query verifyOTP($otp:Int!, $phoneNum:String!){
+    login(phone: $phoneNum, otp: $otp){
+        token
+        user{
+            id
+        }
+    }
+}
+
+query loginOTPLess($token: String!) {
+  loginOTPLess(token: $token) {
+    token
+    user {
+      id
+    }
+  }
+}
+
+query checkUniqueUser($phoneNum:String!, $userName:String!){
+    checkUniqueUser(phone: $phoneNum, username: $userName){
+        phone
+        username
+    }
+}
+
+query getMyProfile{
+    me{
+        ...User
+    }
+}
+
+query  getUserListByPreference($preference:PreferencesInput!){
+
+    searchByPreferences(preferences: $preference)
+    {
+        ...User
+    }
+}
+
+query getMyActiveTournament($eSport: ESports!){
+    active(eSport: $eSport){
+        tournaments {
+            ...UserTournament
+        }
+        type
+    }
+}
+
+query  checkUserTournamentQualification($tournamentId: Int!){
+    getTournamentQualification(tournamentId: $tournamentId){
+        qualified,
+        rules{
+            current,
+            qualified,
+            required,
+            rule
+
+        }
+    }
+}
+
+query getTournamentMatches($tournamentId: Int!)
+{
+    getTournamentMatches(tournamentId:  $tournamentId){
+        ...TournamentMatch
+    }
+}
+
+query getTopTournaments($eSport: ESports!){
+    top(eSport: $eSport){
+        ...UserTournament
+    }
+}
+
+query getTournamentsHistory($eSport: ESports!){
+    history(eSport: $eSport){
+        ...UserTournament
+    }
+}
+
+query getLeaderboard($userId:Int, $tournamentId:Int!, $direction:LeaderboardDirection, $page:Int, $pageSize:Int){
+    leaderboard(input: {tournamentId: $tournamentId, userId: $userId, direction: $direction,page: $page, pageSize: $pageSize }){
+        ...LeaderboardRank
+    }
+}
+
+query getSquadLeaderboard($squadId:Int, $tournamentId:Int!, $direction:LeaderboardDirection, $page:Int, $pageSize:Int){
+    squadLeaderboard(input: {tournamentId: $tournamentId, squadId: $squadId, direction: $direction,page: $page, pageSize: $pageSize }){
+        ...SquadLeaderboard
+    }
+}
+
+query getTournament($tournamentId:Int!){
+    tournament(tournamentId: $tournamentId){
+        ...UserTournament
+    }
+}
+
+query getGameScoring($eSport:ESports!){
+    scoring(eSport: $eSport){
+        killPoints
+        rankPoints{
+            points
+            rank
+        }
+    }
+}
+
+query getTransactions{
+    transactions{
+        amount
+        subWallet
+        createdAt
+        status
+        description
+        transactionId
+        id
+    }
+}
+
+
+query transaction($transactionId: Int!){
+    transaction(id: $transactionId) {
+        id
+        transactionId
+        status
+        amount
+        description
+    }
+}
+
+
+query searchUser($phoneNum:String, $userName:String, $eSport:ESports!, $gameProfileId:String){
+    searchUserESports(eSport: $eSport,phone: $phoneNum, profileId: $gameProfileId, username: $userName ){
+        ...UserSummary
+    }
+}
+
+query recentPlayers($tournamentId: Int!){
+    inviteList(tournamentId: $tournamentId){
+        ...UserSummary
+    }
+}
+
+query lowRating{
+    lowRatingReasons
+}
+
+query topWinners($count: Int!, $from: DateTime!, $to: DateTime!) {
+    topWinners(count: $count, from: $from, to: $to) {
+        amount
+        user {
+            username
+        }
+    }
+}
+fragment LabelFields on Label {
+    index
+    name
+    threshold
+    individualOCR
+    sortOrder
+    mandatory
+    shouldPerformScaleAndStitching
+}
+
+fragment BucketFields on Bucket {
+    bufferSize
+    labels {
+        ...LabelFields
+    }
+}
+
+query ModelParam($eSport: ESports!) {
+    modelParam(eSport: $eSport) {
+        model_name
+        model_url
+        labels {
+            ...LabelFields
+        }
+        bucket {
+            resultRankRating {
+                ...BucketFields
+            }
+            resultRankKills {
+                ...BucketFields
+            }
+            resultRank {
+                ...BucketFields
+            }
+            homeScreenBucket {
+                ...BucketFields
+            }
+            waitingScreenBucket {
+                ...BucketFields
+            }
+            gameScreenBucket {
+                ...BucketFields
+            }
+            loginScreenBucket {
+                ...BucketFields
+            }
+            myProfileScreen {
+                ...BucketFields
+            }
+            playAgain{
+                ...BucketFields
+            }
+        }
+    }
+}
+
+
+
+############## Mutations ####################
+mutation requestOtp($phoneNum:String!){
+    generateOTP(phone: $phoneNum){
+        message
+    }
+}
+
+mutation addUser($userName:String!, $birthDate:Date!, $name:String!, $phone:String!, $referralCode:String){
+    addUser(input: {
+        birthdate: $birthDate,
+        username: $userName,
+        name: $name,
+        referralCode: $referralCode,
+        phone: $phone
+    }){
+        token
+        user{
+            id
+        }
+    }
+}
+
+mutation createGameProfile($ffmaxProfileInput:FFMaxProfileInput,$bgmiProfileMetadataInput:BgmiProfileInput,$eSports:ESports!){
+    createProfile(input:{
+        ffMaxProfile: $ffmaxProfileInput,
+        bgmiProfile: $bgmiProfileMetadataInput,
+        eSport: $eSports
+    }){
+        ...Profile
+    }
+}
+
+mutation updateGameProfile($ffmaxProfileInput:FFMaxProfileInput,$bgmiProfileMetadataInput:BgmiProfileInput,$eSports:ESports!){
+    updateProfile(input:{
+        ffMaxProfile: $ffmaxProfileInput,
+        bgmiProfile: $bgmiProfileMetadataInput,
+        eSport: $eSports
+    }){
+        ...Profile
+    }
+}
+
+mutation submitBGMIGame($finalTier:BgmiLevels!, $initialTier:BgmiLevels!, $kills:Int!, $playedAt:DateTime!, $rank:Int!, $recording:String,
+    $group:BgmiGroups!, $map: BgmiMaps!, $teamRank:Int, $squadScoring:[SquadMemberGameInfo!]){
+    submitBgmiGame(input: {
+        finalTier: $finalTier,
+        initialTier: $initialTier,
+        kills: $kills,
+        playedAt: $playedAt,
+        rank: $rank,
+        recording: $recording,
+        group: $group,
+        map: $map,
+        teamRank: $teamRank,
+        squadScoring: $squadScoring
+    }){
+        ...GameResponse
+    }
+}
+
+mutation submitFFMaxGame($finalTier:FfMaxLevels!, $initialTier:FfMaxLevels!, $kills:Int!, $playedAt:DateTime!, $rank:Int!, $recording:String,
+    $group:FfMaxGroups!, $map: FfMaxMaps!, $teamRank:Int, $squadScoring:[SquadMemberGameInfo!]){
+    submitFfMaxGame(input: {
+        finalTier: $finalTier,
+        initialTier: $initialTier,
+        kills: $kills,
+        playedAt: $playedAt,
+        rank: $rank,
+        recording: $recording,
+        group: $group,
+        map: $map,
+        teamRank: $teamRank,
+        squadScoring: $squadScoring
+    }){
+        ...GameResponse
+    }
+}
+
+mutation submitPreferences($preferencesInput:PreferencesInput!)
+{
+    submitPreferences(input: $preferencesInput){
+        ...UserPreference
+    }
+}
+
+
+mutation joinTournament($tournamentId:Int!,$phone:String){
+    joinTournament(tournamentId: $tournamentId,phone: $phone){
+        message
+    }
+}
+
+mutation withdraw($upi: String!, $amount: Float!) {
+    withdrawUPI(upi: $upi, amount: $amount) {
+        success
+        transactionId
+        wallet{
+            ...Wallet
+        }
+    }
+}
+
+mutation createSquad($tournamentId:Int!, $squadName:String!){
+    createSquad(input: {name: $squadName, tournamentId: $tournamentId}){
+        ...Squad
+    }
+}
+
+mutation joinSquad($inviteCode:String!, $tournamentId:Int!){
+    joinSquad(input: {inviteCode: $inviteCode, tournamentId: $tournamentId}){
+        ...Squad
+    }
+}
+
+mutation updateSquadName($squadName:String!, $squadId:Int!){
+    updateSquad(id: $squadId, input: {name: $squadName}){
+        ...Squad
+    }
+}
+
+mutation deleteSquad($squadId:Int!){
+    deleteSquad(id: $squadId){
+        message
+    }
+}
+
+mutation changeSquad($tournamentId:Int!, $newSquadId:Int!){
+    changeSquad(input: {tournamentId: $tournamentId, newSquadId: $newSquadId}){
+        ...Squad
+    }
+}
+
+mutation unlockSquad($inviteCode: String!){
+    unlockSquad(inviteCode: $inviteCode)
+}
+
+mutation submitFeedback($input: SubmitFeedbackInput!) {
+    submitFeedback(input: $input) {
+        message
+    }
+}
+
+mutation depositUPIManual($upi: String!, $amount: Float!) {
+    depositUPIManual(upi: $upi, amount: $amount) {
+        wallet {
+            ...Wallet
+        }
+        success
+        transactionId
+    }
+}
+
+mutation PaymentCreation($amount: Int!, $targetApp: String!) {
+    paymentCreation(amount: $amount, targetApp: $targetApp) {
+        intentUrl
+        ledgerId
+        success
+    }
+}
+
+mutation EnterTournament($squadInfo: TournamentJoiningSquadInfo, $tournamentId: Int!, $phone: String, $joinCode : String){
+    enterTournament(squadInfo: $squadInfo, tournamentId: $tournamentId, phone: $phone, joinCode : $joinCode){
+        ...UserTournament
+    }
+}
+
+

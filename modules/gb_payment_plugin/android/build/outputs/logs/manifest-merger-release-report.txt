@@ -1,0 +1,53 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:1:1-14:12
+INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:1:1-14:12
+INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:1:1-14:12
+	package
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:2:3-50
+		INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:1:11-69
+queries
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:3:5-10:15
+package#com.phonepe.app
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:4:9-51
+	android:name
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:4:18-48
+package#com.phonepe.app.preprod
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:5:9-59
+	android:name
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:5:18-56
+package#com.google.android.apps.nbu.paisa.user
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:6:9-74
+	android:name
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:6:18-71
+package#net.one97.paytm
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:7:9-51
+	android:name
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:7:18-48
+package#in.org.npci.upiapp
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:8:9-54
+	android:name
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:8:18-51
+package#in.amazon.mShop.android.shopping
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:9:9-68
+	android:name
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:9:18-65
+application
+ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml:11:5-13:19
+uses-sdk
+INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+		ADDED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/saurabh.lahoti/Documents/work/mobile-app/gb_payment_plugin/android/src/main/AndroidManifest.xml

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_curved_tutorial_popup_overlay_dark"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_background_tutorial_popup_dark"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/text_container_padding_h1"
+            android:text="Ready to play!"
+            android:textAlignment="textStart"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/text_5"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/text_container_padding_h1">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:layout_weight="60"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_content_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="40"
+            android:gravity="start"
+            android:lineSpacingExtra="@dimen/_1sdp"
+            android:minHeight="@dimen/_30sdp"
+            android:padding="@dimen/text_container_padding_h2"
+            android:textAlignment="textStart"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/text_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/next_btn_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp">
+
+        <TextView
+            android:id="@+id/btn_done_onboarding"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_button"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/text_container_padding_h2"
+            android:text="Done"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_5"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+</LinearLayout>

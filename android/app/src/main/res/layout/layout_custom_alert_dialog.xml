@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_custom_alert_dialog_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_block_screen_color"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/layout_custom_alert_dialog_container"
+        android:layout_width="@dimen/layout_custom_alert_width"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_dark_2"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_custom_alert_dialog_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gantari"
+            android:padding="5dp"
+            android:text="Head"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/text_6"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/tv_custom_alert_dialog_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gantari"
+            android:padding="5dp"
+            android:text="Sample alert message "
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/text_5" />
+
+        <LinearLayout
+            android:id="@+id/lv_need_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:visibility="gone"
+            android:paddingLeft="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_nee_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Need help?"
+                android:textColor="@color/txt_accent_6"
+                android:layout_marginRight="@dimen/_4ssp"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="normal"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_join_discord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Join our discord server"
+                android:textColor="@color/text_green"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="normal"
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_custom_alert_dialog_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@drawable/bg_rect_stroke"
+                android:paddingHorizontal="8dp"
+                android:text="Ok"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_5"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_custom_alert_dialog_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@drawable/bg_rect_stroke"
+                android:paddingHorizontal="8dp"
+                android:text="Cancel"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_5"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</LinearLayout>

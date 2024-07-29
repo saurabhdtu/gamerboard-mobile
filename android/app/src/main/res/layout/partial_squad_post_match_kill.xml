@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark_2"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvKillScoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gantari"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:text="Kill Score"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_7"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_post_match_squad_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:itemCount="4"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_view_post_match_squad"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

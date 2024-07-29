@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tv_content_text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:paddingHorizontal="@dimen/text_container_padding_h2"
+        android:paddingVertical="8dp"
+        android:text="@string/please_go_to_your_bgmi_profile_page_to_verify_your_session"
+        android:textAlignment="textStart"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:paddingHorizontal="@dimen/text_container_padding_h2"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/tv_content_text_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_content_text_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:paddingHorizontal="@dimen/text_container_padding_h2"
+        android:paddingVertical="8dp"
+        android:text="@string/gamerboard_unverified_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/text_4"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

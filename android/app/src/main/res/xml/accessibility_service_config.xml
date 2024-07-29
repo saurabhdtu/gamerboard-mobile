@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged"
+    android:accessibilityFeedbackType="feedbackAllMask"
+    android:accessibilityFlags="flagDefault"
+    android:canRetrieveWindowContent="true"
+    android:notificationTimeout="100"
+    android:description="@string/accessibility_service_description"
+    android:settingsActivity="com.gamerboard.live.accessibility.ServiceSettingsActivity" />
+
+<!--    typeWindowStateChanged|typeGestureDetectionStart|typeContextClicked|typeTouchInteractionStart|typeViewClicked|typeViewSelected|typeViewFocused-->
+<!--    android:notificationTimeout="100"-->
+<!--    android:packageNames="com.pubg.imobile, com.pubg.imobile, com.gameloft.android.ANMP.GloftA9HM, com.cyberlink.powerdirector.DRA140225_01"-->

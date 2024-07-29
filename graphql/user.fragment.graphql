@@ -1,0 +1,116 @@
+fragment User on User{
+    id
+    birthdate
+    name
+    phone
+    image,
+    achievements {
+        bestPerformance {
+            ...UserTournament
+        }
+        tournamentSummary {
+            ...AchievementSummary
+        }
+
+    }
+    inviteCode,
+    preferences {
+        playingReason,
+        roles,
+        timeOfDay,
+        timeOfWeek
+    }
+    profiles{
+        ...Profile
+    }
+    wallet{
+        ...Wallet
+    }
+    flags {
+        allowSquadCreation
+    }
+    username
+}
+
+fragment UserSummary on User{
+    id
+    name
+    image
+    profiles{
+        ...Profile
+    }
+    username
+}
+
+fragment UserPreference on UserPreference{
+    playingReason,
+    timeOfDay,
+    roles,
+    timeOfWeek
+
+}
+
+
+fragment LeaderboardUser on User{
+    id
+    name
+    phone
+    image
+    username
+}
+
+fragment Profile on Profile{
+    eSport
+    metadata{
+        __typename
+        ... on BgmiProfileMetadata{
+             levels {
+               bgmiGroup: group
+               bgmiLevel:level
+            }
+        }
+        ... on FFMaxProfileMetadata{
+              levels {
+                ffMaxGroup:group,
+                ffMaxLevel:level
+            }
+        }
+    }
+    username
+    profileId
+}
+
+
+
+
+
+
+fragment Wallet on Wallet{
+    id
+    bonus
+    deposit
+    winning
+}
+
+fragment Squad on Squad{
+    name
+    id
+    inviteCode
+    members {
+        ...SquadMember
+    }
+}
+
+fragment LeaderboardSquad on Squad{
+    isDisqualified
+    name
+    id
+}
+
+fragment SquadMember on SquadMember{
+    isReady
+    status
+    user {
+        ...LeaderboardUser
+    }
+}

@@ -1,0 +1,29 @@
+targets:
+  $default:
+    builders:
+      artemis:
+        options:
+          fragments_glob: graphql/**.fragment.graphql
+          schema_mapping:
+            - output: lib/graphql/query.dart
+              schema: schema.graphql
+              queries_glob: graphql/queries.graphql
+          scalar_mapping:
+            - graphql_type: Date
+              dart_type: DateTime
+              custom_parser_import: 'package:gamerboard/utils/scalar_mapping.dart'
+            - graphql_type: DateTime
+              dart_type: DateTime
+              custom_parser_import: 'package:gamerboard/utils/scalar_mapping.dart'
+            - graphql_type: ProfileLevel
+              dart_type: BgmiLevels
+              custom_parser_import: 'package:gamerboard/utils/scalar_mapping.dart'
+            - graphql_type: JSON
+              dart_type: Map
+              custom_parser_import: 'package:gamerboard/utils/scalar_mapping.dart'
+
+
+    sources:
+      - lib/**
+      - graphql/**
+      - schema.graphql

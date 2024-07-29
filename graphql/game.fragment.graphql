@@ -1,0 +1,220 @@
+fragment Game on BgmiGame{
+    id
+    eSport
+    level
+    metadata{
+        ...BGMIData
+    }
+    playedAt
+    rank
+    recording
+    score
+    userId
+}
+
+fragment BGMIData on BgmiMetadata{
+    finalTier
+    initialTier
+    kills
+}
+
+fragment  TournamentMatchMetadata on TournamentMatchMetadata{
+    roomId,
+    roomPassword,
+}
+
+fragment Tournament on Tournament {
+    eSport
+    id
+    name
+    maxPrize
+    userCount
+    gameCount
+    fee,
+    matchType,
+    joinBy,
+    joinCode,
+    qualifiers{
+        rule,
+        value
+    }
+
+    winningDistribution{
+        startRank
+        endRank
+        value
+    }
+    matches {
+        ...TournamentMatch
+    }
+    rules{
+        __typename
+        ... on BGMIRules{
+            bgmiMaxLevel: maxLevel
+            bgmiMinLevel: minLevel
+            bgmiAllowedModes: allowedModes
+            bgmiAllowedMaps: allowedMaps
+            bgmiAllowedGroups: allowedGroups
+        }
+        ... on FFMaxRules{
+            ffMaxLevel: maxLevel
+            ffMinLevel: minLevel
+            ffAllowedModes: allowedModes
+            ffAllowedMaps: allowedMaps
+            ffAllowedGroups: allowedGroups
+        }
+        minUsers
+        maxUsers,
+        maxTeams,
+    }
+    startTime
+    endTime
+}
+
+fragment UserTournament on UserTournament{
+    joinedAt
+    rank
+    score
+    tournament{
+        ...Tournament
+    }
+    squad {
+        ...Squad
+    }
+    tournamentMatchUser {
+        ...TournamentMatchUser
+    }
+}
+
+fragment  AchievementSummary on AchievementSummary
+{
+    KDRatio,
+    eSport,
+    group,
+    matchType,
+    maxTier,
+    played,
+    topTenCount
+}
+
+
+fragment TournamentMatch on TournamentMatch{
+    tournamentId,
+    endTime,
+    startTime,
+    id,
+    maxParticipants,
+    minParticipants,
+    metadata {
+        ...TournamentMatchMetadata
+    }
+
+}
+
+
+fragment LeaderboardRank on Leaderboard{
+    id
+    rank
+    score
+    behindBy
+    isDisqualified
+    details{
+        gamesPlayed
+        top{
+            rank
+            score
+            metadata{
+                __typename
+                ... on BgmiMetadata{
+                    kills
+                }
+                ... on FfMaxMetadata{
+                    kills
+                }
+            }
+        }
+    }
+    user{
+        ...LeaderboardUser
+    }
+}
+
+fragment SquadLeaderboard on SquadLeaderboard{
+    id
+    squad {
+        ...LeaderboardSquad
+    }
+    behindBy
+    rank
+    score
+    details {
+        gamesPlayed
+        top {
+            score
+            teamRank
+        }
+    }
+}
+
+fragment GameResponse on SubmitGameResponse{
+    game{
+        id
+        eSport
+        rank
+        score
+        userId
+        teamRank
+        metadata{
+            __typename
+            ... on BgmiMetadata{
+                initialTier
+                finalTier
+                kills
+                bgmiGroup:group
+                bgmiMap:map
+            }
+            ... on FfMaxMetadata{
+                initialTier
+                finalTier
+                kills
+                ffGroup:group
+                ffMap:map
+            }
+        }
+    }
+    tournaments{
+        isAdded
+        isTop
+        exclusionReason
+        tournament{
+            id
+            name
+        }
+        submissionState {
+            userId,
+            hasSubmitted,
+            user {
+                ...LeaderboardUser
+
+            }
+        }
+        squadScores {
+            kills
+            user {
+                username
+                image
+            }
+        }
+    }
+
+}
+fragment TournamentMatchUser on TournamentMatchUser{
+    slotInfo {
+        teamNumber
+    }
+    id,
+    tournamentMatchId
+    tournamentUserId
+    notJoined
+    sos
+}

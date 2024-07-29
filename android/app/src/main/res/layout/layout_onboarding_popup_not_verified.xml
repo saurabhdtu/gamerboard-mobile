@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:layout_gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cross" />
+    </FrameLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_24sdp"
+        android:paddingHorizontal="@dimen/text_container_padding_h1"
+        android:layout_gravity="end"
+        app:tint="@color/unverified"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_alert" />
+    <TextView
+        android:id="@+id/tv_titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_35sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:padding="@dimen/text_container_padding_h1"
+        android:text="Gamerboard Profile Not Verified"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/txt_white"
+        android:textSize="@dimen/text_5" />
+
+    <TextView
+        android:id="@+id/tv_descriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:paddingHorizontal="@dimen/text_container_padding_h1"
+        tools:text="Sadly, you have not verified your GamerBoard Profile so this game and it’s score won’t be counted.
+Make sure you verify your profile before the next Game
+To verify: Go to home and Swipe right"
+        android:textAlignment="center"
+        android:gravity="center|top"
+        android:minHeight="@dimen/_35sdp"
+        android:textColor="@color/txt_color_light_grey"
+        android:textSize="@dimen/text_5" />
+    <TextView
+        android:id="@+id/tv_subTitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:padding="@dimen/text_container_padding_h1"
+        android:text="@string/tv_note_verify_instructions"
+        android:textAlignment="center"
+        android:gravity="center|top"
+        android:textColor="@color/txt_white"
+        android:textSize="@dimen/text_5" />
+    <LinearLayout
+        android:id="@+id/btn_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:padding="@dimen/_2sdp">
+        <TextView
+            android:id="@+id/tv_btn_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+
+            android:background="@color/btn_bg_solid"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="Ok, Got it!"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_5"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+</LinearLayout>

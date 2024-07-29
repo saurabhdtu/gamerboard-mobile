@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stop">Stop</string>
+    <string name="yes">Yes</string>
+    <string name="grant_permission">I\'ve granted permission</string>
+    <string name="no">No</string>
+    <string name="permission_title"><b>Permissions</b>\nPlease note that Gamerboard requires the following permissions:</string>
+    <string name="permission_autostart"><b>Auto Start our service</b>- ensure your score recording is not missed if the service is shut off by mistake [Only for MiUi/Vivo/Oppo]</string>
+    <string name="permission_app_usage"><b>App usage stats</b>- to make sure we record only your game screen and nothing else</string>
+    <string name="permission_accessibility"><b>Accessibility</b>- to make sure we record only your game screen and nothing else</string>
+    <string name="permission_battery"><b>Battery Optimisation</b>- Gamerboard Service is not shut off while you are in an intense gun fight on game</string>
+    <string name="allow_consumption_in_background">Grant <b>Unrestrticted</b> access to Gamerboard in background power consumption management in battery settings.</string>
+    <string name="permission_draw_over_other"><b>Draw over other apps</b>- to make sure you have access to your Gamerboard data on game</string>
+    <string name="permission_from_settings">Some permissions are needed to be given from application settings.</string>
+    <string name="later">Later</string>
+    <string name="cont">Continue</string>
+    <string name="restart_gamerboard">Gamerboard has stopped recording your game. Restart gamerboard quickly.</string>
+    <string name="restart">Restart</string>
+    <string name="enable">Enable</string>
+    <string name="bgmi_id_na">Your device isn\'t registered with us. Contact admin on discord channel.</string>
+    <string name="accessibility_service_label">Gamerboard accessibility</string>
+    <string name="accessibility_service_description">Helps Gamerboard to identify your game and maintain privacy</string>
+    <string name="rank">Rank</string>
+    <string name="player">Player</string>
+    <string name="score">Finishes</string>
+    <string name="stop_gamerboard">Stop Gamerboard</string>
+    <string name="stop_confirm">Are you sure you want to stop Gamerboard from recording your game?</string>
+
+
+    //tutorial overlay
+
+    <string name="welcome_gamerboard"><![CDATA[Welcome to Gamerboard]]></string>
+    <string name="turn_on">Turn on</string>
+    <string name="stop_gamerboard_service"><![CDATA[Gamerboard has lost scan permission.<br> Turn it back <b>ON</b> to log your scores properly.]]></string>
+    <string name="welcome_gamerboard_content"><![CDATA[Please follow this short but<br> important tutorial to learn how<br> to verify Gamerboard before<br> playing %1$s.]]></string>
+    <string name="gamerboard_icon"><![CDATA[Gamerboard icon]]></string>
+    <string name="gamerboard_icon_content">
+        <![CDATA[When playing via Gamerboard,<br> you will see this icon. <br><br>Tap on the icon to continue]]></string>
+    <string name="gamerboard_mini_menu"><![CDATA[Gamerboard mini menu]]></string>
+    <string name="gamerboard_mini_menu_content"><![CDATA[Tapping the icon shows the mini menu.<br><br>From here, you can see your connection status, help pages, your leaderboards, launch Gamerboard app, and shut off the overlay.]]></string>
+    <string name="gamerboard_verification"><![CDATA[Verify session]]></string>
+    <string name="gamerboard_verification_content"><![CDATA[Your session is currently <br>not verified.]]></string>
+    <string name="gamerboard_unverified"><![CDATA[Verify session]]></string>
+    <string name="gamerboard_unverified_content"><![CDATA[Your session is currently not verified.]]></string>
+
+    <string name="gamerboard_new_unverified_content"><![CDATA[It is important to verify your profile for your score to be counted.]]></string>
+    <string name="gamerboard_new_unverified_title"><![CDATA[Swipe right to verify]]></string>
+
+    <string name="gamerboard_session_verified"><![CDATA[Session verified!]]></string>
+    <string name="gamerboard_session_verified_content"><![CDATA[Green <b><font color=#14DEAE>&#9900;</font></b> means verified.<br><br> Make sure you’re verified before<br> starting any match.]]></string>
+    <string name="ready_to_play"><![CDATA[Ready to play!]]></string>
+    <string name="ready_to_play_content_bgmi"><![CDATA[Each time you play a match via Gamerboard, make sure your session is verified.<br><br>We support only <b>CLASSIC RANKED</b>matches and press <b>START</b>]]></string>
+    <string name="ready_to_play_content_freefire"><![CDATA[Each time you play a match via Gamerboard, make sure your session is verified.<br><br>We support only <b>BR</b>matches and press <b>START</b>]]></string>
+    <string name="current_leaderboard"><![CDATA[Current leaderboard]]></string>
+    <string name="current_leaderboard_content"><![CDATA[One more thing:<br><br>Your leaderboards can be viewed <br>in-game by tapping the leaderboard <br>icon in the mini-menu]]></string>
+    <string name="tutorial_match_completed"><![CDATA[<b>Tutorial match completed!</b>]]></string>
+    <string name="you_will_be_competing_in_gamerboard"><![CDATA[You will compete in Gamerboard with players of similar skill level.<br><br> Rank up to compete for higher rewards.<br>]]></string>
+
+    <string name="you_will_be_redirected"><![CDATA[You will be redirected to the <b><font color=#FFE144>#help</font></b> channel on our discord server.<br><br> Do you want to continue?]]></string>
+    <string name="do_you_wish_to_close_app"><![CDATA[Do you wish to close Gamerboard app?]]></string>
+    <string name="open_gamer_board_alert"><![CDATA[Open the <b><font color=#FFE144>Gamerboard</font></b> app?]]></string>
+    <string name="open_bgmi_alert"><![CDATA[Open <b><font color=#FFE144>%1$s</font></b> app?]]></string>
+
+
+    <string name="you_have_been_unverified"><![CDATA[<br>You have been <b>Unverified</b>.<br> please re-verify yourself before starting a new match!<br>]]></string>
+    <!--    <string name="verify_session"><![CDATA[Your session is currently not verified. <br><br>Please go to your BGMI Profile page to<br>verify your session.]]></string>-->
+    <!--    <string name="verify_session"><![CDATA[Your session is currently not verified. <br><br>Please go to your BGMI Profile page to<br>verify your session.]]></string>-->
+
+
+    <string name="verify_session"><![CDATA[Your session is currently not verified. <br><br>Please go to your BGMI Profile page to<br>verify your session.]]></string>
+    <string name="session_verified"><![CDATA[Once the icon is green, it means your session is verified.<br>While verified, any games you play will count toward <br>your leaderboard play.<br><br>Make sure to check that you’re verified before <br>starting any match.]]></string>
+    <string name="session_unverified"><![CDATA[Go to your <b> BGMI Profile </b> <br>page to verify your session.]]></string>
+    <string name="leaderboard_tutorial_text"><![CDATA[Your leaderboards can be viewed <br> in-game by tapping the leaderboard <br> icon in the mini-menu]]></string>
+    <string name="post_game_score_tutorial_text_first"><![CDATA[After each match, you can see   <br>your GAMERBOARD score.<br><br>This is different from your<br>in-game BGMI score]]></string>
+    <string name="post_game_score_tutorial_text_second"><![CDATA[This shows your: <br><br> Points towards leaderboard <br><br>Match performance and <br>top 3 match status]]></string>
+    <string name="gb_tutorial_complete"><![CDATA[Congratulations for completing your<br>tutorial match!<br><br>You now have access to all leaderboards]]></string>
+    <string name="gb_earn_cash_rewards"><![CDATA[Now go earn some cash and rewards! <br><br>If you have any other questions, visit or FAQ or <br>contact us from the help section]]></string>
+    <string name="go_to_your_bgmi_profile_page_to_verify_your_session"><![CDATA[Swipe to <b>BGMI</b> Profile to verify session.]]></string>
+    <string name="go_to_your_freefire_profile_page_to_verify_your_session"><![CDATA[Go to <b>Freefire Max</b> Profile to verify session.]]></string>
+    <string name="please_go_to_your_bgmi_profile_page_to_verify_your_session"><![CDATA[<font color=#FFE144>Please swipe right to your BGMI Profile page to verify your session.</font>]]></string>
+    <string name="please_go_to_your_freefire_profile_page_to_verify_your_session"><![CDATA[<font color=#FFE144>Please go to your Freefire Max Profile page to verify your session.</font>]]></string>
+    <string name="ok"><![CDATA[OKAY]]></string>
+    <string name="verification_status"><![CDATA[Verification status]]></string>
+    <string name="help_page"><![CDATA[Help page]]></string>
+    <string name="your_leaderboards"><![CDATA[Your leaderboards]]></string>
+    <string name="launch_gamerboard_app"><![CDATA[Open Gamerboard app]]></string>
+    <string name="disconnect_gamerboard"><![CDATA[Disconnect Gamerboard]]></string>
+    <string name="unverified"><![CDATA[Unverified]]></string>
+
+
+    <string name="sample_paragraph_with_dummy_text">Sample paragraph with dummy text</string>
+    <string name="next">Next</string>
+    <string name="sample">Sample</string>
+    <string name="confirm_your_id_number"><![CDATA[Enter your <b>%1$s ID</b>]]></string>
+    <string name="verify_your_id_number"><![CDATA[Verify your %1$s ID]]></string>
+    <string name="if_incorrect">If not matching</string>
+    <string name="bgmi_id_number_can_be_found"><![CDATA[Your ID can be found on the upper left corner of your profile screen, under your username:]]></string>
+    <string name="make_sure_your_game_id">We have detected your %1$s ID</string>
+    <string name="please_check">Please confirm if they match</string>
+    <string name="retrying">Retrying</string>
+    <string name="freefire_id_number_can_be_found"><![CDATA[Your ID Number can be found in your profile screen, under your username]]></string>
+    <string name="i_have_checked_my_id"><![CDATA[I have checked my %1$s ID # and understand I this cannot be undone.]]></string>
+    <string name="confirm"><![CDATA[Confirm]]></string>
+    <string name="close">CLOSE</string>
+    <string name="open_the_full_gamerboard_app"><![CDATA[Your %1$s rank determines your Gamerboard rank]]></string>
+    <string name="sample_points_1"><![CDATA[<b>+22</b><sub> pts<sub>]]></string>
+    <string name="skill_level">Skill level</string>
+    <string name="no_tournaments_joined">No tournaments joined!</string>
+    <string name="no_active_tournaments">No Active Tournaments!</string>
+    <string name="open_gamerboard_app">Open Gamerboard App</string>
+    <string name="game_submit_message">Final score will be calculated once all teammates submit their scores. You will be notified once final scores are available.</string>
+    <string name="username_change_title">Do you want to update your username to \"%1$s\"?</string>
+    <string name="username_change_desc">Using the correct username is important for score calculation in team matches.</string>
+    <string name="waiting_for_users_to_submit">Waiting on %1$s teammates to complete their game. Once their scores have been submitted, you will receive a notification of the final squad match score.</string>
+    <string name="downloading_assets">Downloading assets...</string>
+    <string name="game_exp">How was you experience with Gamerboard?</string>
+    <string name="cancel">Cancel</string>
+    <string name="share_feedback">Share your feedback with us</string>
+    <string name="tell_experience">Tell us your experience so we can better support you</string>
+    <string name="improve_exp">We’d love to hear from you to continue improving the product experience.</string>
+    <string name="write_your_feedback">Write your feedback</string>
+    <string name="submit">Submit</string>
+
+    <string name="did_gamerboard_just_restart">Did Gamerboard just restart?</string>
+    <string name="gamerboard_app_killed_by_phone">Gamerboard app was killed by your system in background. This might affects your games in future. Watch and follow this video to avoid this in future.</string>
+    <string name="goto_recent_app">1. Go to recent apps and lock Gamerboard</string>
+
+    <string name="restart_device">3. Restart the device after steps 1 and 2.</string>
+
+    <string name="device_has_game_booster">2. If your device (like MI/redmi/oppo/vivo/iqoo/poco) has a game booster/game space app then whitelist Gamerboard and remove BGMI from the game boosting app.</string>
+    <string name="kills_captured">%1$s kills captured.</string>
+    <string name="kills_processed">We have processed your kills.</string>
+    <string name="dont_skip">Don\'t skip the next screen.</string>
+    <string name="stay_there">Stay there till your rank is captured.</string>
+    <string name="username_change_detected">%1$s username change detected</string>
+    <string name="user_id_mismatch">%1$s user ID didn\'t match</string>
+    <string name="user_id_mismatch_details">We read your user ID in %1$s as %2$s whereas, your user ID registered with Gamerboard for this game is %3$s.</string>
+    <string name="user_id_mismatch_support">Please login with the correct game profile %1$s</string>
+    <string name="user_id_mismatch_support_ff">\nOR\nTry changing the background behind the user ID so that it is clearly visible.</string>
+    <string name="profile_not_verified">Not verified</string>
+    <string name="profile_verified">Verified</string>
+    <string name="tv_note_verify_instructions">To verify: Go to Lobby and Swipe right</string>
+    <string name="unable_to_connect_to_server">Unable to connect to server. Please check your internet connection.</string>
+
+</resources>

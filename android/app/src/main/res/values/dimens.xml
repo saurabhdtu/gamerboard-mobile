@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="floating_logo_size">@dimen/_24sdp</dimen>
+    <dimen name="floating_layout_width">@dimen/_380sdp</dimen>
+    <dimen name="floating_layout_height">240dp</dimen>
+    <dimen name="floating_menu_width">@dimen/_32sdp</dimen>
+    <dimen name="text_size_leaderboard_main">12sp</dimen>
+    <dimen name="text_size_leaderboard_sub">9sp</dimen>
+    <dimen name="leaderboard_margin">10dp</dimen>
+    <dimen name="floating_menu_tutorial_width">@dimen/_160sdp</dimen>
+    <dimen name="floating_menu_height">@dimen/_190sdp</dimen>
+    <dimen name="floating_menu_tutorial_popup_width">150dp</dimen>
+    <dimen name="floating_verification_tutorial_popup_width">@dimen/_150sdp</dimen>
+    <dimen name="floating_unverified_tutorial_popup_width">250dp</dimen>
+    <dimen name="layout_post_game_summary">@dimen/_100sdp</dimen>
+    <dimen name="layout_verify_bgmi_id_width">@dimen/_250sdp</dimen>
+    <dimen name="layout_verify_bgmi_id_text_input_width">@dimen/_160sdp</dimen>
+    <dimen name="layout_ready_to_play">400dp</dimen>
+    <dimen name="layout_post_match_skill_level_card">@dimen/_165sdp</dimen>
+    <dimen name="layout_post_match_tutorial_card">@dimen/_165sdp</dimen>
+    <dimen name="popup_with_menu_max_width">@dimen/_450sdp</dimen>
+    <dimen name="layout_custom_alert_width">@dimen/_330sdp</dimen>
+
+
+    <dimen name="text_1">@dimen/_4ssp</dimen>
+    <dimen name="text_2">@dimen/_6ssp</dimen>
+    <dimen name="text_3">@dimen/_7ssp</dimen>
+    <dimen name="text_4">@dimen/_9ssp</dimen>
+    <dimen name="text_5">@dimen/_11ssp</dimen>
+    <dimen name="text_6">@dimen/_14ssp</dimen>
+    <dimen name="text_7">@dimen/_16ssp</dimen>
+    <dimen name="text_8">@dimen/_18ssp</dimen>
+    <dimen name="text_9">@dimen/_24ssp</dimen>
+
+    <dimen name="thin_line">@dimen/_1sdp</dimen>
+
+    <dimen name="icon_padding">@dimen/_13sdp</dimen>
+    <dimen name="icon_text_padding">@dimen/_7sdp</dimen>
+
+    <dimen name="menu_icon_size">@dimen/_12sdp</dimen>
+    <dimen name="menu_icon_container_size">@dimen/_36sdp</dimen>
+
+    <dimen name="menu_arrow_icon_size">@dimen/_10sdp</dimen>
+    <dimen name="menu_arrow_icon_padding">@dimen/_10sdp</dimen>
+
+    <dimen name="text_container_padding_h1">@dimen/_6sdp</dimen>
+    <dimen name="text_container_padding_h2">@dimen/_3sdp</dimen>
+
+    <dimen name="menu_aligned_text_end_margin">@dimen/_1sdp</dimen>
+
+</resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>tf_model_name</key>
+        <value>gray_model-1</value>
+    </entry>
+    <entry>
+        <key>app_update_android</key>
+        <value>
+            {{
+            "latestVersion": 50,
+            "latestVersionCode": "3.0.3",
+            "downloadUrl": "gs://gb-apk/gamerboard-apk/gamerboard-debug-staging-v66.apk",
+            "forceUpdateVersion": 50,
+            "title": "Update available",
+            "forceTitle": "Update App Now",
+            "description": "An update is available for the Gamerboard App.",
+            "forceDescription": "Current version of Gamerboard is not supported. Please install
+            latest version.",
+            "whatsNew": [
+            "Stable version",
+            "Bug fixes"
+            ]
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>data_gathering_app</key>
+        <value>com.dts.freefiremax</value>
+    </entry>
+    <entry>
+        <key>gb_discord_link</key>
+        <value>https://discord.gg/nfmbBzXnQK</value>
+    </entry>
+    <entry>
+        <key>gb_relaunch_video_id</key>
+        <value>Od31HsvnU_o</value>
+    </entry>
+    <entry>
+        <key>logging_flags</key>
+        <value>{
+            "memory_logs": false,
+            "label_ocr_rank_kill": true,
+            "api_response": true
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>save_images</key>
+        <value>{
+            "save": true,
+            "maxImages": 20,
+            "timeGap": 3000,
+            "allowedLabels": [
+            "homeScreen",
+            "rankRating",
+            "rankKill"
+            ]
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>new_user_reward</key>
+        <value>50</value>
+    </entry>
+    <entry>
+        <key>vision_confidence</key>
+        <value>0.8</value>
+    </entry>
+    <entry>
+        <key>ocr_weight</key>
+        <value>{
+            "base_weight": 1,
+            "contains_1": 2,
+            "starts_with_1": 10,
+            "vision_ocr": 30
+            }</value>
+    </entry>
+    <entry>
+        <key>ocr_text_size_bound</key>
+        <value>{
+            "com.dts.freefiremax" : {
+            "min" : 0.0113,
+            "max" : 0.15
+            },
+            "com.pubg.imobile" : {
+            "min" : 0.015,
+            "max" : 2.0
+            }}
+        </value>
+    </entry>
+    <entry>
+        <key>onboarding_data</key>
+        <value>{
+            "showHelp": true,
+            "video": {
+            "url": "",
+            "title": "Easy 3-steps to get started",
+            "cta": "How to play"
+            },
+            "steps": [
+            {
+            "title": "Step 1",
+            "description": "Find a tournament to join on homepage."
+            },
+            {
+            "title": "Step 2",
+            "description": "Click on “Play now” button on the top-right corner of your screen when
+            you’re ready to play."
+            },
+            {
+            "title": "Step 3",
+            "description": "Grant us the permission to record you screen, then enjoy playing the
+            game!"
+            }
+            ]
+            }
+        </value>
+    </entry>
+
+</defaultsMap>

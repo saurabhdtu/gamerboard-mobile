@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "1011634213257",
+    "project_id": "gamerboard-dev",
+    "storage_bucket": "gamerboard-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011634213257:android:2325f372678398cff49158",
+        "android_client_info": {
+          "package_name": "com.gamerboard.live"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011634213257-2jhr6bbl30im82mftkmsuagqu1iiutbk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gamerboard.live",
+            "certificate_hash": "1be31213f64bf36b9e63959fb84e4d4fb8ae848b"
+          }
+        },
+        {
+          "client_id": "1011634213257-36sl7v12sq69gndju4nfd0vfv0slm3op.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvKCobtj_ltHc4KHHn8jCnSRvvr9OGS5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011634213257-36sl7v12sq69gndju4nfd0vfv0slm3op.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011634213257:android:b62164fb3000dc41f49158",
+        "android_client_info": {
+          "package_name": "com.gamerboard.live.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011634213257-36sl7v12sq69gndju4nfd0vfv0slm3op.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvKCobtj_ltHc4KHHn8jCnSRvvr9OGS5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011634213257-36sl7v12sq69gndju4nfd0vfv0slm3op.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
